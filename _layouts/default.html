@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="web development, mobile apps, Ruby on Rails, iOS development, Android development, API development">
+
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | bust_css_cache }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script>
+    console.log('%c🚀 Noreaster Group', 'font-size: 24px; color: #1e40af; font-weight: bold;');
+    console.log('%cHey there, curious developer! 🤓', 'font-size: 16px; color: #6366f1;');
+    console.log('%cLooks like you know the drill, contact us at info@noreastergroup.com! 👋', 'font-size: 16px; color: #6366f1;');
+    </script>
+</head>
+    <body class="bg-primary text-primary p-4 md:p-6 lg:p-10 min-h-screen flex flex-col">
+        {{ content }}
+    </body>
+</html>
