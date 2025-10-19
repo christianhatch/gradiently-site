@@ -1,0 +1,54 @@
+# Cursor Rules for Gradiently Site
+
+## CSS and Styling Rules
+
+**CRITICAL: Do not write any CSS code.**
+
+- We have tooling for CSS processing (Tailwind CSS)
+- Only use Tailwind utility classes in HTML files
+- Do not create or modify CSS files directly
+- Do not write custom CSS rules or styles
+- Do not use `<style>` tags in HTML
+
+## HTML Guidelines
+
+- Use only Tailwind utility classes for styling
+- Keep HTML semantic and clean
+- Use proper Tailwind responsive prefixes (sm:, md:, lg:, xl:)
+- Leverage Tailwind's built-in utilities for spacing, colors, typography, etc.
+
+## File Structure
+
+- HTML files: Use Tailwind classes only
+- CSS files: Managed by build tooling, do not edit
+- Configuration: Update Tailwind config if needed for custom utilities
+
+## Examples
+
+✅ Good:
+```html
+<div class="bg-gradient-to-r from-purple-500 to-pink-500 p-8 rounded-lg">
+  <h1 class="text-4xl font-bold text-white">Title</h1>
+</div>
+```
+
+❌ Bad:
+```html
+<div style="background: linear-gradient(...)">
+  <h1 style="font-size: 2rem; color: white;">Title</h1>
+</div>
+```
+
+❌ Bad:
+```css
+.custom-gradient {
+  background: linear-gradient(...);
+}
+```
+
+## Build Process
+
+- CSS is processed by Tailwind CLI
+- Custom utilities should be added to Tailwind config
+- Use `@apply` directive in Tailwind config for custom components if needed
+- Never write raw CSS in project files
