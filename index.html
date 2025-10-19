@@ -51,13 +51,18 @@ title: Gradiently - Beautiful Gradient Wallpapers
     <!-- Download Button -->
     <div class="mb-8 sm:mb-12 px-4">
       <a href="https://apps.apple.com/app/apple-store/id897414345?pt=96487992&ct=gradiently.app&mt=8" class="group relative inline-block w-full sm:w-auto">
-        <!-- Button background with glow -->
-        <div class="absolute inset-0 rounded-2xl sm:rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300" style="background: linear-gradient(45deg, #D60270, #9B4F96, #0038A8);"></div>
-        <!-- Main button -->
-        <div class="relative bg-white px-8 sm:px-12 lg:px-16 py-6 sm:py-7 lg:py-8 rounded-2xl sm:rounded-3xl font-bold text-lg sm:text-xl lg:text-2xl hover:bg-opacity-95 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border-2 border-white border-opacity-30" style="color: #D60270;">
-          <span class="flex items-center justify-center space-x-2 sm:space-x-3 lg:space-x-4">
-            <span class="text-xl sm:text-2xl lg:text-3xl">📱</span>
-            <span class="text-center">Download on the App Store</span>
+        <!-- Outer glow effect -->
+        <div class="absolute inset-0 rounded-2xl sm:rounded-3xl blur-xl opacity-60 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500" style="background: linear-gradient(45deg, #D60270, #9B4F96, #0038A8);"></div>
+        <!-- Inner glow effect -->
+        <div class="absolute inset-0 rounded-2xl sm:rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-300" style="background: linear-gradient(45deg, #D60270, #9B4F96, #0038A8);"></div>
+        <!-- Main button with gradient -->
+        <div class="relative px-8 sm:px-12 lg:px-16 py-6 sm:py-7 lg:py-8 rounded-2xl sm:rounded-3xl font-bold text-lg sm:text-xl lg:text-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border-2 border-white border-opacity-30 backdrop-blur-sm overflow-hidden" style="background: linear-gradient(135deg, #D60270 0%, #9B4F96 50%, #0038A8 100%);">
+          <!-- Shimmer effect -->
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);"></div>
+          <!-- Button content -->
+          <span class="relative flex items-center justify-center space-x-2 sm:space-x-3 lg:space-x-4 text-white">
+            <span class="text-xl sm:text-2xl lg:text-3xl group-hover:animate-bounce">📱</span>
+            <span class="text-center font-semibold">Download on the App Store</span>
           </span>
         </div>
       </a>
