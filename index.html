@@ -14,26 +14,14 @@ title: Gradiently - Beautiful Gradient Wallpapers
   <div class="text-center max-w-6xl mx-auto relative z-10 px-4 sm:px-6">
     <!-- App Icon -->
     <div class="relative mb-8 sm:mb-12">
-      <div class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-white bg-opacity-20 backdrop-blur-xl rounded-2xl sm:rounded-3xl mx-auto flex items-center justify-center shadow-2xl border border-white border-opacity-30">
-        <!-- Gradient G Logo -->
-        <svg class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#D60270;stop-opacity:1" />
-              <stop offset="50%" style="stop-color:#9B4F96;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#0038A8;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <!-- Outer circle -->
-          <circle cx="50" cy="50" r="40" fill="url(#gGradient)" stroke="white" stroke-width="2" opacity="0.9"/>
-          <!-- Inner circle -->
-          <circle cx="50" cy="50" r="25" fill="none" stroke="white" stroke-width="3" opacity="0.8"/>
-          <!-- G letter -->
-          <path d="M50 25 C35 25, 25 35, 25 50 C25 65, 35 75, 50 75 C60 75, 68 70, 72 62 M50 50 L50 40 M50 50 L65 50" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
-        </svg>
+      <!-- Gradient G Logo -->
+      <div class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl sm:rounded-3xl mx-auto shadow-2xl flex items-center justify-center relative" style="background: linear-gradient(135deg, #0038A8 0%, #9B4F96 50%, #D60270 100%);">
+        <!-- Black overlay -->
+        <div class="absolute inset-0 rounded-2xl sm:rounded-3xl bg-black opacity-20"></div>
+        <span class="font-black text-6xl sm:text-7xl lg:text-8xl bg-clip-text text-transparent relative z-10" style="background: linear-gradient(135deg, #D60270 0%, #9B4F96 50%, #0038A8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.4); text-stroke: 1px rgba(255,255,255,0.4);">G</span>
       </div>
       <!-- Glow effect -->
-      <div class="absolute inset-0 w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl sm:rounded-3xl mx-auto blur-2xl opacity-50 -z-10" style="background: linear-gradient(45deg, #D60270, #9B4F96, #0038A8);"></div>
+      <div class="absolute inset-0 w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl sm:rounded-3xl mx-auto blur-2xl opacity-50 -z-10" style="background: linear-gradient(45deg, #0038A8, #9B4F96, #D60270);"></div>
     </div>
 
     <!-- App Name -->
