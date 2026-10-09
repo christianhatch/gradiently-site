@@ -1,0 +1,45 @@
+---
+layout: default
+title: Gradiently - Shared Mix
+---
+
+<main id="mix" class="min-h-screen flex flex-col items-center justify-center gap-6 px-4 py-16 text-center bg-gray-900">
+  <h1 id="mix-name" class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-lg">Shared Mix</h1>
+  <p id="mix-colors" class="font-mono text-lg sm:text-xl text-white drop-shadow-md"></p>
+  <a href="https://apps.apple.com/app/apple-store/id897414345?pt=96487992&ct=gradiently.app-mix&mt=8" class="mt-8 rounded-3xl bg-white px-10 py-5 text-lg font-semibold text-gray-800 shadow-xl transition-transform hover:scale-105 active:scale-95">Get Gradiently</a>
+  <p class="text-white drop-shadow-md">Already have Gradiently? Tap <strong>Open</strong> in the banner at the top.</p>
+</main>
+
+<script>
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const hexes = (params.get('c') || '').split(',').filter(Boolean);
+    if (hexes.length === 0 || !hexes.every((hex) => /^[0-9a-f]{6}$/i.test(hex))) {
+      document.getElementById('mix-name').textContent = 'This link has no colors';
+      return;
+    }
+    const name = params.get('n');
+    if (name) {
+      document.getElementById('mix-name').textContent = name;
+      document.title = `${name} - Gradiently`;
+    }
+    document.getElementById('mix-colors').textContent = hexes.map((hex) => `#${hex.toUpperCase()}`).join('  ');
+
+    const positions = (params.get('p') || '').split(',').map(Number);
+    const hasPositions = positions.length === hexes.length
+      && positions.every((p, i) => Number.isInteger(p) && p >= 0 && p <= 100 && (i === 0 || p >= positions[i - 1]));
+    const stops = hexes.map((hex, i) => `#${hex}${hasPositions ? ` ${positions[i]}%` : ''}`).join(', ');
+    const parsedAngle = Number.parseInt(params.get('a'), 10);
+    const angle = Number.isNaN(parsedAngle) ? 180 : Math.min(Math.max(parsedAngle, 0), 360);
+    const backgrounds = {
+      linear: `linear-gradient(${angle}deg, ${stops})`,
+      radial: `radial-gradient(circle farthest-corner, ${stops})`,
+      elliptical: `radial-gradient(ellipse farthest-corner, ${stops})`,
+      angular: `conic-gradient(from ${angle}deg, ${stops})`
+    };
+    // CSS gradients need two stops, so one color is a plain fill.
+    document.getElementById('mix').style.background = hexes.length === 1
+      ? `#${hexes[0]}`
+      : (backgrounds[params.get('s')] || backgrounds.linear);
+  })();
+</script>
