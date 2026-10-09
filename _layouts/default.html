@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Smart App Banner. "Open" passes this page's URL, so a /mix page opens that mix in the app. -->
+    <meta name="apple-itunes-app" content="app-id=897414345">
+    <script>
+      document.querySelector('meta[name="apple-itunes-app"]').content += `, app-argument=${location.href}`;
+    </script>
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="gradient wallpapers, iPhone wallpapers, iPad wallpapers, mobile wallpapers, gradient generator, wallpaper app">
 
