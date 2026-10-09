@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["YWKER65N63.com.christianhatch.colormix"],
+        "components": [
+          { "/": "/mix", "comment": "A shared mix" }
+        ]
+      }
+    ]
+  }
+}
