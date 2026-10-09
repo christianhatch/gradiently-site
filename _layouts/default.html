@@ -43,12 +43,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% if page.homepage %}
+    <link rel="stylesheet" href="{{ "/assets/css/home.css" | bust_css_cache }}">
+    {% endif %}
     <script>
     console.log('%c🌈 Gradiently', 'font-size: 24px; color: #8b5cf6; font-weight: bold;');
     console.log('%cCreate beautiful gradient wallpapers! 🎨', 'font-size: 16px; color: #a855f7;');
     </script>
 </head>
-    <body class="bg-white text-gray-900 min-h-screen dark:bg-gray-900 dark:text-gray-100">
+    <body{% unless page.homepage %} class="bg-white text-gray-900 min-h-screen dark:bg-gray-900 dark:text-gray-100"{% endunless %}>
         {{ content }}
     </body>
 </html>
